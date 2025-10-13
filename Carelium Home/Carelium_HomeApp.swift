@@ -11,7 +11,7 @@ import SwiftUI
 struct Carelium_HomeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartupPage()
         }
     }
 }
