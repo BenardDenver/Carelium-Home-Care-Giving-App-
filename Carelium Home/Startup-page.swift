@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StartupPage: View {
+struct Startup: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +20,5 @@ struct StartupPage: View {
 }
 
 #Preview {
-    StartupPage()
+    Startup()
 }
