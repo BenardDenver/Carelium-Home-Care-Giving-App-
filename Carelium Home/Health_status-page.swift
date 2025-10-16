@@ -5,3 +5,16 @@
 //  Created by Benard Chiherenge on 15/10/2025.
 //
 
+import SwiftUI
+
+struct Health_Status:View {
+    var body: some View {
+        VStack{
+            
+        }
+        .toolbar(.hidden, for: .tabBar)
+    }
+}
+#Preview {
+    Health_Status()
+}
