@@ -10,19 +10,19 @@ import SwiftUI
 struct Clients_List: View {
     @State var isDeleting : Bool = false
     var body: some View {
-        VStack{
-            HStack{
-                Text("My Clients")
-                    .font(.title)
-                    .bold()
-                Spacer()
-            }
-            
-        }
-        .toolbar(.hidden, for: .tabBar)
-        .padding()
-        
         NavigationStack {
+            VStack{
+                HStack{
+                    Text("My Clients")
+                        .font(.title)
+                        .bold()
+                    Spacer()
+                }
+                
+            }
+            .toolbar(.hidden, for: .tabBar)
+            .padding()
+            
             ScrollView {
                 ForEach(clients) { client in
                     HStack{
@@ -65,7 +65,11 @@ struct Clients_List: View {
                 }
             }
         }
-    }
+        
+        
+           
+        }
+    
     func dismiss(){
         
     }
