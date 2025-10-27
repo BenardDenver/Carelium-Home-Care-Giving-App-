@@ -49,6 +49,7 @@ struct DeleteAppointment:View {
                             .foregroundStyle(.red)
                     }
                 }
+              
                 
                 Button{
                     //function that deletes the appointment
@@ -62,6 +63,7 @@ struct DeleteAppointment:View {
                                 
                     }
                 }
+               
             }
                 
         }

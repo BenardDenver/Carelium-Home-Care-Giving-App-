@@ -10,6 +10,7 @@ import Foundation
 struct ClientsInfo{
     var id: UUID = UUID()
     var name: String
+    var description: String
 }
  
 

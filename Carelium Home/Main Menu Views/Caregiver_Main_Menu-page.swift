@@ -24,7 +24,9 @@ struct Caregiver_Main_Menu: View {
                                  .resizable()
                                  .frame(width:40, height: 40)
                                  .padding(.trailing, 10)
+                                 .foregroundStyle(.orange)
                          }
+                         .buttonStyle(.glass)
                          
                      }
                      Text("Care for your loved ones")
@@ -34,7 +36,7 @@ struct Caregiver_Main_Menu: View {
  
                  ///Find a client button
                     NavigationLink{
-                        Find_Client_Caregiver()
+                        Find_Caregiver()
                      } label: {
                          HStack {
                              Image(systemName: "magnifyingglass.circle")

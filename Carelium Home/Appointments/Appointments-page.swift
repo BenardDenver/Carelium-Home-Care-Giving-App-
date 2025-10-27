@@ -19,7 +19,7 @@ import SwiftUI
                         Text("Appointments")
                             .font(.title)
                             .bold()
-                            .padding(.trailing, 140)
+                            .padding(.trailing, 120)
                         // create button
                         Button{
                             isCreating.toggle()
@@ -27,10 +27,13 @@ import SwiftUI
                             Image(systemName: "plus.circle")
                                 .resizable()
                                 .frame(width: 30, height: 30)
+                                .foregroundStyle(.blue)
                         }
                         .sheet(isPresented: $isCreating, onDismiss: dismiss){
                             AddAppointment(isCreating:$isCreating)
+                                .presentationDetents([.medium, .large])
                         }
+                        .buttonStyle(.glass)
                     }
                 }
                 .padding()
@@ -50,12 +53,15 @@ import SwiftUI
                                             .padding(5)
                                             .foregroundStyle(appointment.isDone ? .green : .blue)
                                     }
+                                    
                                     Spacer()
                                     Text(appointment.name)
                                         .font(.subheadline)
                                     Spacer()
                                     Text("On: \(appointment.date)")
                                     Spacer()
+                                    
+                                    
                                     //edit button
                                     Button{
                                         isEditing.toggle()
@@ -63,10 +69,13 @@ import SwiftUI
                                         Image(systemName: "pencil.circle")
                                             .resizable()
                                             .frame(width:iconSize, height: iconSize)
+                                            .foregroundStyle(.blue)
                                     }
                                     .sheet(isPresented: $isEditing, onDismiss: dismiss) {
                                         EditAppointment(isEditing: $isEditing )
+                                            .presentationDetents([.medium, .large])
                                     }
+                                    .buttonStyle(.glass)
                                     
 
                                     //delete button
@@ -81,7 +90,9 @@ import SwiftUI
                                     }
                                     .sheet(isPresented: $isDeleting, onDismiss: dismiss){
                                         DeleteAppointment(isDeleting: $isDeleting, appointment: appointment)
+                                            .presentationDetents([.medium, .large])
                                     }
+                                    .buttonStyle(.glass)
                                 }
                                 .overlay{
                                     RoundedRectangle(cornerRadius: 10)

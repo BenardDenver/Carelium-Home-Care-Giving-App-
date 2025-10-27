@@ -37,7 +37,7 @@ struct ClientMenu: View{
 //                        .padding(.bottom, 50)
                 ///Find a caregiver button
                    NavigationLink{
-                       Find_Client_Caregiver()
+                       Find_Client()
                     } label: {
                         HStack {
                             Image(systemName: "magnifyingglass.circle")

@@ -22,7 +22,7 @@ struct Reminders:View {
                 Text("Reminders")
                     .font(.title)
                     .bold()
-                    .padding(.trailing, 190)
+                    .padding(.trailing, 160)
                 // create button
                 Button{
                     isCreating.toggle()
@@ -30,10 +30,14 @@ struct Reminders:View {
                     Image(systemName: "plus.circle")
                         .resizable()
                         .frame(width: 30, height: 30)
+                        .foregroundStyle(.blue)
                 }
                 .sheet(isPresented: $isCreating, onDismiss: dismiss){
                     AddReminder(isCreating:$isCreating)
+                        .presentationDetents([.medium, .large])
                 }
+                .buttonStyle(.glass)
+                
             }
         }
         .padding()
@@ -53,11 +57,15 @@ struct Reminders:View {
                                 Image(systemName: "pencil.circle")
                                     .resizable()
                                     .frame(width:iconSize, height: iconSize)
+                                    .foregroundStyle(.blue)
                             }
                             .sheet(isPresented: $isEditing,
                                    onDismiss: dismiss) {
                                 EditReminder( isEditing: $isEditing)
+                                    .presentationDetents([.medium, .large])
                             }
+                                   .buttonStyle(.glass)
+                            
                             //Alarm Button
                             Button{
                                
@@ -70,6 +78,8 @@ struct Reminders:View {
                                     .frame(width: iconSize, height: iconSize)
                                     .foregroundStyle(.green)
                             }
+                            .buttonStyle(.glass)
+                            
                             //Delete Button
                             Button{
                                 isDeleting.toggle()
@@ -82,7 +92,10 @@ struct Reminders:View {
                             }
                             .sheet(isPresented: $isDeleting, onDismiss: dismiss){
                                 DeleteReminder(isDeleting: $isDeleting, reminder: reminder)
+                                    .presentationDetents([.medium, .large])
                             }
+                            .presentationDetents([.medium, .large])
+                            .buttonStyle(.glass)
                             
                             
                             
