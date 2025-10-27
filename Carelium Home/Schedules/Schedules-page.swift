@@ -26,10 +26,13 @@ struct Schedules: View {
                     Image(systemName: "plus.circle")
                         .resizable()
                         .frame(width:30, height: 30)
+                        .foregroundStyle(.blue)
                 }
                 .sheet(isPresented: $isAdding, onDismiss: dismiss){
                     AddSchedule(isAdding: $isAdding)
+                        .presentationDetents([.medium, .large])
                 }
+                .buttonStyle(.glass)
             }
             .padding()
         }
@@ -66,7 +69,9 @@ struct Schedules: View {
                         }
                         .sheet(isPresented: $isEditing, onDismiss: dismiss){
                             EditSchedule(isEditing: $isEditing)
+                                .presentationDetents([.medium, .large])
                         }
+                        .buttonStyle(.glass)
                         
                         //delete button
                         Button{
@@ -80,7 +85,9 @@ struct Schedules: View {
                         }
                         .sheet(isPresented: $isDeleting, onDismiss: dismiss){
                             DeleteSchedule(isDeleting: $isDeleting, schedule: schedule)
+                                .presentationDetents([.medium, .large])
                         }
+                        .buttonStyle(.glass)
                     }
                     .overlay{
                         Rectangle()

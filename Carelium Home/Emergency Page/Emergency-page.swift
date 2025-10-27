@@ -30,7 +30,9 @@ struct Emergency:View {
                 }
                 .sheet(isPresented: $isOnInfo, onDismiss: dismiss){
                     EmergencyInfo(isOnInfo: $isOnInfo)
+                        .presentationDetents([.medium, .large])
                 }
+                .buttonStyle(.glass)
             }
             
         }
@@ -59,6 +61,7 @@ struct Emergency:View {
                                         .frame(width:30, height: 30)
                                         .foregroundStyle(.green)
                                 }
+                                .buttonStyle(.glass)
                                 
                                 // Emergency call button
                                 Button{
@@ -70,6 +73,7 @@ struct Emergency:View {
                                         .foregroundStyle(.red)
                                 }
                                 .padding()
+                                .buttonStyle(.glass)
                             }
                             .overlay{
                                 RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1)

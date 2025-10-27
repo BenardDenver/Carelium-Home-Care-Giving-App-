@@ -38,7 +38,7 @@ struct EmergencyInfo:View{
             RoundedRectangle(cornerRadius: 10)
                 .stroke(lineWidth: 1)
                 .foregroundStyle(.red)
-                .frame(height: 120)
+                .frame(height: 150)
         }
         .padding()
     }
