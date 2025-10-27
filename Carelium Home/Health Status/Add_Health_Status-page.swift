@@ -11,7 +11,7 @@ struct HealthStatus: View {
     @State var clients = ["John", "Jane", "Smith"]
     @State var selectedClient = "John"
     
-    @State var heartRate:String = ""
+    @State var heartRate:Int = 0
     @State var weight:Double = 0
     @State var topBloodPressure :Int = 0
     @State var bottomBloodPressure :Int = 0
@@ -33,14 +33,19 @@ struct HealthStatus: View {
                         }
                     }
                 }
-                TextField("Today's Heart Rate(in BPM)", text: $heartRate)
-                    .overlay{
-                        RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1)
-                            .frame(height: 50)
-                            .opacity(0.3)
-                    }
-                    .padding(.bottom)
-                    .keyboardType(.decimalPad)
+                VStack {
+                    Text("Heart Rate(BPM)")
+                        .foregroundStyle(.gray)
+                        .offset(x:-120, y: -10)
+                    TextField("Heart Rate(BPM)", value: $heartRate, formatter: NumberFormatter())
+                        .keyboardType(.decimalPad)
+                        .overlay{
+                            RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1)
+                                .frame(height: 50)
+                                .opacity(0.3)
+                        }
+                        .padding(.bottom, 15)
+                }
                 
                 VStack {
                     Text("Weight(kg)")
