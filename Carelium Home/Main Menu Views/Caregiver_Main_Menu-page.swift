@@ -43,13 +43,15 @@ struct Caregiver_Main_Menu: View {
                                  .resizable()
                                  .frame(width: 50, height: 50)
                                  .offset(x: -58)
+                                 .foregroundStyle(.orange)
                              Text("Find a client")
+                                 .foregroundStyle(.orange)
                                  .bold()
                                  .padding()
                                  .offset(x: -53)
                          }
                          .overlay{
-                             RoundedRectangle(cornerRadius: 20).stroke(Color.blue)
+                             RoundedRectangle(cornerRadius: 20).stroke(Color.orange)
                                  .frame(width: 350, height: 90)
                          }
                          .foregroundColor(.blue)
@@ -65,17 +67,18 @@ struct Caregiver_Main_Menu: View {
                                  .resizable()
                                  .frame(width: 40, height: 50)
                                  .offset(x: -66)
+                                 .foregroundStyle(.orange)
                              
                              Text("Schedules")
                                  .bold()
                                  .padding()
                                  .offset(x: -55)
+                                 .foregroundStyle(.orange)
                          }
                          .overlay{
-                             RoundedRectangle(cornerRadius: 20).stroke(Color.blue)
+                             RoundedRectangle(cornerRadius: 20).stroke(Color.orange)
                                  .frame(width: 350, height: 90)
                          }
-                         .foregroundColor(.blue)
                          .padding()
                      }
                     
@@ -88,16 +91,17 @@ struct Caregiver_Main_Menu: View {
                                  .resizable()
                                  .frame(width: 40, height: 50)
                                  .offset(x: -65)
+                                 .foregroundStyle(.orange)
                              Text("Reminders")
                                  .bold()
                                  .padding()
                                  .offset(x: -57)
+                                 .foregroundStyle(.orange)
                          }
                          .overlay{
-                             RoundedRectangle(cornerRadius: 20).stroke(Color.blue)
+                             RoundedRectangle(cornerRadius: 20).stroke(Color.orange)
                                  .frame(width: 350, height: 90)
                          }
-                         .foregroundColor(.blue)
                          .padding()
                      }
                      
@@ -110,13 +114,15 @@ struct Caregiver_Main_Menu: View {
                                  .resizable()
                                  .frame(width: 60, height: 50)
                                  .offset(x: -67)
+                                 .foregroundStyle(.orange)
                              Text("My clients")
                                  .bold()
                                  .padding()
                                  .offset(x: -67)
+                                 .foregroundStyle(.orange)
                          }
                          .overlay{
-                             RoundedRectangle(cornerRadius: 20).stroke(Color.blue)
+                             RoundedRectangle(cornerRadius: 20).stroke(Color.orange)
                                  .frame(width: 350, height: 90)
                          }
                          .foregroundColor(.blue)
@@ -132,14 +138,15 @@ struct Caregiver_Main_Menu: View {
                                  .resizable()
                                  .frame(width: 60, height: 50)
                                  .offset(x: -46)
+                                 .foregroundStyle(.orange)
                              Text("Emergency Hub")
                                  .bold()
                                  .padding()
                                  .offset(x: -45)
-                                 
+                                 .foregroundStyle(.orange)
                          }
                          .overlay{
-                             RoundedRectangle(cornerRadius: 20).stroke(Color.blue)
+                             RoundedRectangle(cornerRadius: 20).stroke(Color.orange)
                                  .frame(width: 350, height: 90)
                              
                          }

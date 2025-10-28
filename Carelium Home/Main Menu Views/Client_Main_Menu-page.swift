@@ -26,6 +26,7 @@ struct ClientMenu: View{
                                 .resizable()
                                 .frame(width:40, height: 40)
                                 .padding(.trailing, 10)
+                                .foregroundStyle(.orange)
                         }
                         
                     }
@@ -44,16 +45,17 @@ struct ClientMenu: View{
                                 .resizable()
                                 .frame(width: 50, height: 50)
                                 .offset(x: -40)
+                                .foregroundStyle(.orange)
                             Text("Find a caregiver")
                                 .bold()
                                 .padding()
                                 .offset(x: -40)
+                                .foregroundStyle(.orange)
                         }
                         .overlay{
-                            RoundedRectangle(cornerRadius: 20).stroke(Color.blue)
+                            RoundedRectangle(cornerRadius: 20).stroke(Color.orange)
                                 .frame(width: 350, height: 90)
                         }
-                        .foregroundColor(.blue)
                         .padding()
                     }
                     
@@ -66,17 +68,18 @@ struct ClientMenu: View{
                                 .resizable()
                                 .frame(width: 40, height: 50)
                                 .offset(x: -50)
+                                .foregroundStyle(.orange)
                             
                             Text("Health Status")
                                 .bold()
                                 .padding()
                                 .offset(x: -44)
+                                .foregroundStyle(.orange)
                         }
                         .overlay{
-                            RoundedRectangle(cornerRadius: 20).stroke(Color.blue)
+                            RoundedRectangle(cornerRadius: 20).stroke(Color.orange)
                                 .frame(width: 350, height: 90)
                         }
-                        .foregroundColor(.blue)
                         .padding()
                     }
                    
@@ -89,16 +92,18 @@ struct ClientMenu: View{
                                 .resizable()
                                 .frame(width: 40, height: 50)
                                 .offset(x: -65)
+                                .foregroundStyle(.orange)
                             Text("Reminders")
                                 .bold()
                                 .padding()
                                 .offset(x: -57)
+                                .foregroundStyle(.orange)
                         }
                         .overlay{
-                            RoundedRectangle(cornerRadius: 20).stroke(Color.blue)
+                            RoundedRectangle(cornerRadius: 20).stroke(Color.orange)
                                 .frame(width: 350, height: 90)
                         }
-                        .foregroundColor(.blue)
+                    
                         .padding()
                     }
                     
@@ -111,16 +116,17 @@ struct ClientMenu: View{
                                 .resizable()
                                 .frame(width: 50, height: 50)
                                 .offset(x: -47)
+                                .foregroundStyle(.orange)
                             Text("Appointments")
                                 .bold()
                                 .padding()
                                 .offset(x: -47)
+                                .foregroundStyle(.orange)
                         }
                         .overlay{
-                            RoundedRectangle(cornerRadius: 20).stroke(Color.blue)
+                            RoundedRectangle(cornerRadius: 20).stroke(Color.orange)
                                 .frame(width: 350, height: 90)
                         }
-                        .foregroundColor(.blue)
                         .padding()
                  }
                 
@@ -133,18 +139,19 @@ struct ClientMenu: View{
                                 .resizable()
                                 .frame(width: 40, height: 50)
                                 .offset(x: -20)
+                                .foregroundStyle(.orange)
                             Text("Traditional Healing Hub")
                                 .bold()
                                 .padding()
                                 .offset(x: -8)
+                                .foregroundStyle(.orange)
                                 
                         }
                         .overlay{
-                            RoundedRectangle(cornerRadius: 20).stroke(Color.blue)
+                            RoundedRectangle(cornerRadius: 20).stroke(Color.orange)
                                 .frame(width: 350, height: 90)
                             
                         }
-                        .foregroundColor(.blue)
                         .padding()
                 
                 }

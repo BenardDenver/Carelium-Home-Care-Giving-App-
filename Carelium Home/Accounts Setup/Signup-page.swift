@@ -18,6 +18,10 @@ struct Signup:View {
     var body: some View {
         NavigationStack{
             VStack(spacing: 20) {
+                Text("Enter your details:")
+                    .font(.headline)
+                    .foregroundStyle(.gray)
+                    .padding(.trailing, 200)
             //text fields
                 HStack{
                     TextField("First Name", text: $firstName)

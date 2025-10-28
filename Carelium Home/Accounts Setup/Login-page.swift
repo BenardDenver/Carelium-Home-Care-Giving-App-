@@ -16,25 +16,15 @@ struct Login: View {
     var body: some View{
         NavigationStack{
             VStack(spacing:20){
-                Text("Welcome Back!")
-                    .font(.largeTitle)
-                    .bold()
-                    .padding()
-                    .offset(y: 70)
                 
                 Spacer()
                 
                 // textfields
                 HStack{
                     TextField("Email", text: $email)
-                    Button{
-                        
-                    } label:{
-                        Image(systemName: "person.fill")
+                    Image(systemName: "person.fill")
                             .foregroundStyle(.gray)
                             .padding(.trailing, 5)
-                            
-                    }
                 }
                 .padding()
                 .overlay{
@@ -102,7 +92,7 @@ struct Login: View {
                 HStack{
                     Text("New User?")
                     NavigationLink("Create Acoount"){
-                        
+                        ChooseRole()
                     }
                     .foregroundStyle(.orange)
                 }
@@ -184,6 +174,7 @@ struct Login: View {
                  
             }
             .padding()
+            .navigationTitle("Welcome Back!")
             
             
         }
