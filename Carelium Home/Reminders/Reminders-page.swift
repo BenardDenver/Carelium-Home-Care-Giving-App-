@@ -30,7 +30,7 @@ struct Reminders:View {
                     Image(systemName: "plus.circle")
                         .resizable()
                         .frame(width: 30, height: 30)
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(.orange)
                 }
                 .sheet(isPresented: $isCreating, onDismiss: dismiss){
                     AddReminder(isCreating:$isCreating)
@@ -104,6 +104,7 @@ struct Reminders:View {
                         .overlay{
                             RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1)
                                 .frame(height: 50)
+                                .foregroundStyle(.orange)
                         }
                         .padding()
                     }

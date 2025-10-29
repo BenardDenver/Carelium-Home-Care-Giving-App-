@@ -11,14 +11,14 @@ struct Find_Caregiver: View {
     @State var searchCaregiver:String = ""
     @State var isBooked: Bool = false
     var body: some View {
-        HStack{
-            Text("Caregivers List")
-                .font(.title)
-                .bold()
-            Spacer()
-        }
-        .toolbar(.hidden, for: .tabBar)
-        .padding()
+//        HStack{
+        //            Text("Caregivers List")
+        //                .font(.title)
+        //                .bold()
+        //            Spacer()
+        //        }
+        //        .toolbar(.hidden, for: .tabBar)
+        //        .padding()
         
         NavigationStack {
             ScrollView {
@@ -26,7 +26,7 @@ struct Find_Caregiver: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 1)
-                            .foregroundStyle(.blue)
+                            .foregroundStyle(.orange)
                             .frame(height:200)
                         HStack {
                             VStack(alignment: .leading){
@@ -44,7 +44,7 @@ struct Find_Caregiver: View {
                                     ZStack{
                                         RoundedRectangle(cornerRadius: 25)
                                             .frame(width:140, height: 50)
-                                            .foregroundStyle(.blue)
+                                            .foregroundStyle(.orange)
                                         Text(isBooked ? "Booked" : "Book Now")
                                             .foregroundStyle(.white)
                                             .bold()
@@ -54,6 +54,7 @@ struct Find_Caregiver: View {
                             }
                             Spacer()
                         }
+                        .navigationTitle("Caregivers List")
                         .padding()
                     }
                     .padding()
@@ -62,6 +63,8 @@ struct Find_Caregiver: View {
             }
         }
         .searchable(text: $searchCaregiver, prompt: "Search for a caregiver")
+        .toolbar(.hidden, for: .tabBar)
+        
     }
     var filteredCaregivers:[Caregiver]{
         if searchCaregiver.isEmpty{

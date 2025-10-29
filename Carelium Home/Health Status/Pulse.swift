@@ -12,7 +12,7 @@ struct Pulse:View {
         ZStack{
             RoundedRectangle(cornerRadius: 10)
                 .frame(width: 200, height: 150)
-                .foregroundStyle(.red)
+                .foregroundStyle(.orange)
             VStack{
                 HStack{
                     Text("Pulse(BPM)")

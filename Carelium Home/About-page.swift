@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct About: View {
+    @Binding var isPresented:Bool
     var body: some View {
         VStack{
-            
+            Text("Coming Soon...")
+                .font(.largeTitle)
+                .bold()
         }
-        .toolbar(.hidden, for: .tabBar)
+        
     }
 }
 #Preview{
-    About()
+    About(isPresented: .constant(true))
 }

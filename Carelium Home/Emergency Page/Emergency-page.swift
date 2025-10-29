@@ -25,7 +25,7 @@ struct Emergency:View {
                     Image(systemName: "exclamationmark.warninglight.fill")
                         .resizable()
                         .frame(width: 30, height: 30)
-                        .foregroundStyle(.yellow)
+                        .foregroundStyle(.orange)
                         
                 }
                 .sheet(isPresented: $isOnInfo, onDismiss: dismiss){
@@ -78,6 +78,7 @@ struct Emergency:View {
                             .overlay{
                                 RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1)
                                     .frame(height: 50)
+                                    .foregroundStyle(.orange)
                             }
                             .padding()
                         }

@@ -7,6 +7,9 @@
 import SwiftUI
 
 struct ChooseRole:View {
+    @AppStorage("isClient") var isClient:Bool = false
+    @State private var choiceClient: Bool = false
+    @State private var choiceCaregiver: Bool = false
     var body: some View {
         NavigationStack {
             ZStack{
@@ -17,8 +20,10 @@ struct ChooseRole:View {
                     Text("Choose Your Role")
                         .font(.largeTitle)
                         .bold()
-                    NavigationLink{
-                    CareRecipientAccount()
+                    
+                    Button{
+                        isClient = true
+                        choiceClient.toggle()
                     } label: {
                         ZStack{
                             RoundedRectangle(cornerRadius: 25)
@@ -30,8 +35,13 @@ struct ChooseRole:View {
                                 .font(.title2)
                         }
                     }
-                    NavigationLink{
-                    CaregiverAccount()
+                    .navigationDestination(isPresented: $choiceClient){
+                        CareRecipientAccount()
+                    }
+                    
+                    Button{
+                        isClient = false
+                        choiceCaregiver.toggle()
                     } label: {
                         ZStack{
                             RoundedRectangle(cornerRadius: 25)
@@ -42,6 +52,9 @@ struct ChooseRole:View {
                                 .bold()
                                 .font(.title2)
                         }
+                    }
+                    .navigationDestination(isPresented: $choiceCaregiver){
+                        CaregiverAccount()
                     }
                 }
             }

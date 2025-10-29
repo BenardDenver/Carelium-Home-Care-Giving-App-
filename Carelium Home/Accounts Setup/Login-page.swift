@@ -12,6 +12,7 @@ struct Login: View {
     @State var password:String = ""
     @State var seePassword:Bool = false
     @State var isResetting:Bool = false
+    @AppStorage("isClient") var isClient:Bool = false
     
     var body: some View{
         NavigationStack{

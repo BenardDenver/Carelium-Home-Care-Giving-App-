@@ -26,7 +26,7 @@ struct Schedules: View {
                     Image(systemName: "plus.circle")
                         .resizable()
                         .frame(width:30, height: 30)
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(.orange)
                 }
                 .sheet(isPresented: $isAdding, onDismiss: dismiss){
                     AddSchedule(isAdding: $isAdding)
@@ -39,7 +39,7 @@ struct Schedules: View {
         .toolbar(.hidden, for: .tabBar)
         
         
-        VStack{
+        VStack(){
             ScrollView{
                 ForEach(schedules){ schedule in
                     HStack{
@@ -71,7 +71,7 @@ struct Schedules: View {
                             EditSchedule(isEditing: $isEditing)
                                 .presentationDetents([.medium, .large])
                         }
-                        .buttonStyle(.glass)
+                        
                         
                         //delete button
                         Button{
@@ -87,15 +87,15 @@ struct Schedules: View {
                             DeleteSchedule(isDeleting: $isDeleting, schedule: schedule)
                                 .presentationDetents([.medium, .large])
                         }
-                        .buttonStyle(.glass)
+                        
                     }
                     .overlay{
                         Rectangle()
                             .stroke(lineWidth: 1)
                             .frame(height: 65)
+                            .foregroundStyle(.orange)
                     }
-                    .padding(10)
-                    .shadow(radius: 10)
+                    .padding()
                 }
                 .padding(10)
             }
