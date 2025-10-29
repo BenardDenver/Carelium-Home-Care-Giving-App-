@@ -18,7 +18,7 @@ struct RemedyRow:View {
             Spacer()
         }
         .overlay{
-            RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 1)
+            RoundedRectangle(cornerRadius: 10).stroke(Color.orange, lineWidth: 1)
                 .frame(height: 50)
         }
         .padding(10)

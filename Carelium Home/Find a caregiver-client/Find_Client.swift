@@ -9,18 +9,9 @@ import SwiftUI
 
 
 struct Find_Client: View {
-    @State var searchClient:String = ""
+    @State private var searchClient:String = ""
+    @State private var clientSelected:Bool = false
     var body: some View {
-        HStack{
-
-            Text("Clients List")
-                .font(.title)
-                .bold()
-            Spacer()
-        }
-        .toolbar(.hidden, for: .tabBar)
-        .padding()
-        
         
         NavigationStack {
             ScrollView {
@@ -28,7 +19,7 @@ struct Find_Client: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 1)
-                            .foregroundStyle(.blue)
+                            .foregroundStyle(.orange)
                             .frame(height:200)
                         HStack {
                             VStack(alignment: .leading){
@@ -39,12 +30,14 @@ struct Find_Client: View {
                                 Text(client.description)
                                 
                                 Button{
-                                    
+                                    //method goes here
+                                    clientSelected.toggle()
                                 } label: {
                                     ZStack{
                                         RoundedRectangle(cornerRadius: 25)
                                             .frame(width:140, height: 50)
-                                        Text("Select Client")
+                                            .foregroundStyle(.orange)
+                                        Text(clientSelected ? "Selected" : "Select Client")
                                             .foregroundStyle(.white)
                                             .bold()
                                     }
@@ -52,6 +45,7 @@ struct Find_Client: View {
                             }
                             Spacer()
                         }
+                        .navigationTitle("Clients List")
                         .padding()
                     }
                     .padding()
@@ -60,6 +54,7 @@ struct Find_Client: View {
             }
         }
         .searchable(text: $searchClient, prompt: "Search for a client")
+        .toolbar(.hidden, for: .tabBar)
     }
     var filteredClients:[CareRecipient]{
         if searchClient.isEmpty{

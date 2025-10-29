@@ -27,7 +27,7 @@ import SwiftUI
                             Image(systemName: "plus.circle")
                                 .resizable()
                                 .frame(width: 30, height: 30)
-                                .foregroundStyle(.blue)
+                                .foregroundStyle(.orange)
                         }
                         .sheet(isPresented: $isCreating, onDismiss: dismiss){
                             AddAppointment(isCreating:$isCreating)
@@ -98,6 +98,7 @@ import SwiftUI
                                     RoundedRectangle(cornerRadius: 10)
                                         .stroke(lineWidth: 1)
                                         .frame(height:65)
+                                        .foregroundStyle(.orange)
                                 }
                                 .padding()
                                 }

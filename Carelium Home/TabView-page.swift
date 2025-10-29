@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct TabView_Page:View {
+    @AppStorage("isClient") var isClient:Bool = false
     var body: some View {
         TabView{
-            ClientMenu()
-                .tabItem{
-                    Image(systemName: "house.circle")
-                    Text("Menu")
+            if isClient == true{
+                ClientMenu()
+                    .tabItem{
+                        Image(systemName: "house.circle")
+                        Text("Menu")
                         
-                }
+                    }
+            } else{
+                Caregiver_Main_Menu()
+                    .tabItem{
+                        Image(systemName: "house.circle")
+                        Text("Menu")
+                    }
+            }
             
             CommunicationHub()
                 .tabItem{
@@ -30,6 +39,7 @@ struct TabView_Page:View {
                     Text("Settings")
                 }
         }
+        .tint(.orange)
     }
 }
 #Preview {

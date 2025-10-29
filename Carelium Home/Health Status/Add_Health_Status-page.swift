@@ -18,14 +18,9 @@ struct HealthStatus: View {
     @State var sleepTime : Double = 0
     
     var body: some View {
-        ScrollView {
-            VStack {
-                VStack(alignment: .leading){
-                    Text("Client's Health Status")
-                        .font(.title)
-                        .bold()
-                    
-                    
+        NavigationStack {
+            ScrollView {
+                VStack {
                     HStack {
                         Text("Choose Client")
                         Spacer()
@@ -77,45 +72,47 @@ struct HealthStatus: View {
                             .padding(.top, 15)
                     }
                 }
+                .navigationTitle("Health Status")
+                .padding()
+                Section(header: Text("Today's Blood Pressure")
+                    .font(.headline)
+                    .padding(.trailing, 180)
+                    .offset(y: 25)
+                        
+                ){
+                    
+                    VStack {
+                        Text("Top Blood Pressure")
+                            .offset(x:-110, y: 10)
+                            .foregroundStyle(.gray)
+                        TextField("Top Blood Pressure", value: $topBloodPressure, formatter: NumberFormatter())
+                            .padding()
+                            .overlay{
+                                RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1)
+                                    .frame(height: 50)
+                                    .opacity(0.3)
+                            }
+                            .keyboardType(.decimalPad)
+                    }
+                    VStack {
+                        Text("Bottom Blood Pressure")
+                            .offset(x:-95, y: 10)
+                            .foregroundStyle(.gray)
+                        TextField("Bottom Blood Pressure", value: $bottomBloodPressure, formatter: NumberFormatter())
+                            .padding()
+                            .overlay{
+                                RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1)
+                                    .frame(height: 50)
+                                    .opacity(0.3)
+                            }
+                            .keyboardType(.decimalPad)
+                    }
+                }
                 .padding()
             }
-            
-            Section(header: Text("Today's Blood Pressure")
-                .font(.headline)
-                .padding(.trailing, 180)
-                .offset(y: 25)
-                    
-            ){
-                
-                VStack {
-                    Text("Top Blood Pressure")
-                        .offset(x:-110, y: 10)
-                        .foregroundStyle(.gray)
-                    TextField("Top Blood Pressure", value: $topBloodPressure, formatter: NumberFormatter())
-                        .padding()
-                        .overlay{
-                            RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1)
-                                .frame(height: 50)
-                                .opacity(0.3)
-                        }
-                        .keyboardType(.decimalPad)
-                }
-                VStack {
-                    Text("Bottom Blood Pressure")
-                        .offset(x:-95, y: 10)
-                        .foregroundStyle(.gray)
-                    TextField("Bottom Blood Pressure", value: $bottomBloodPressure, formatter: NumberFormatter())
-                        .padding()
-                        .overlay{
-                            RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1)
-                                .frame(height: 50)
-                                .opacity(0.3)
-                        }
-                        .keyboardType(.decimalPad)
-                }
-            }
-            .padding()
         }
+            
+         //send button
         Button{
             
         } label: {
@@ -124,14 +121,18 @@ struct HealthStatus: View {
                     .fill(.orange)
                     .frame(width:300, height: 50)
                 Text("Send")
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.white)
+                    .bold()
                     
             }
         }
         .padding()
         
+        }
+        
+        
     }
-}
+
 
 #Preview {
     HealthStatus()

@@ -21,9 +21,6 @@ struct Traditional_Healing: View {
             }
             .listStyle(.inset)
             .navigationTitle("Traditional Healing Hub")
-            
-//        } detail: {
-//            Text("Select Illness")
       }
         .toolbar(.hidden, for: .tabBar)
     }

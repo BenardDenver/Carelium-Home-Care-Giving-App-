@@ -15,10 +15,17 @@ struct Signup:View {
     @State var confirmPassword = ""
     @State var seePassword:Bool = false
     @State var seeConfirmPassword:Bool = false
+    @AppStorage("isClient") var isClient:Bool = false
+    @State var createdAccount:Bool = false
+    
     var body: some View {
         NavigationStack{
             VStack(spacing: 20) {
-            //text fields
+                Text("Enter your details:")
+                    .font(.headline)
+                    .foregroundStyle(.gray)
+                    .padding(.trailing, 200)
+                //text fields
                 HStack{
                     TextField("First Name", text: $firstName)
                         .padding()
@@ -28,7 +35,7 @@ struct Signup:View {
                                 .stroke(lineWidth: 1)
                                 .foregroundStyle(.orange)
                                 .frame(height: 50)
-                                
+                            
                         }
                     Spacer()
                     TextField("Last Name", text: $lastName)
@@ -39,23 +46,23 @@ struct Signup:View {
                                 .stroke(lineWidth: 1)
                                 .foregroundStyle(.orange)
                                 .frame(height: 50)
-                                
+                            
                         }
                 }
                 HStack {
                     TextField("Email", text: $email)
                         .padding()
                     Image(systemName: "person.fill")
-                            .foregroundStyle(.gray)
-                            .padding(.trailing, 18)
+                        .foregroundStyle(.gray)
+                        .padding(.trailing, 18)
                 }
                 .overlay{
-                            RoundedRectangle(cornerRadius: 25)
-                                .stroke(lineWidth: 1)
-                                .foregroundStyle(.orange)
-                                .frame(height: 50)
-                            
-                        }
+                    RoundedRectangle(cornerRadius: 25)
+                        .stroke(lineWidth: 1)
+                        .foregroundStyle(.orange)
+                        .frame(height: 50)
+                    
+                }
                 
                 
                 //password
@@ -107,19 +114,30 @@ struct Signup:View {
                 }
                 
                 //Sign up button
-             Button{
-                 
-             } label: {
-                 ZStack{
-                     RoundedRectangle(cornerRadius: 25)
-                         .fill(.orange)
-                         .frame(width: 350,height:50)
-                     Text("Create Account")
-                         .font(.title2)
-                         .foregroundStyle(.white)
-                         .bold()
-                 }
-             }
+                Button{
+                    //method goes here
+                    createdAccount.toggle()
+                } label: {
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 25)
+                            .fill(.orange)
+                            .frame(width: 350,height:50)
+                        Text("Create Account")
+                            .font(.title2)
+                            .foregroundStyle(.white)
+                            .bold()
+                    }
+                }
+                .navigationDestination(isPresented: $createdAccount){
+//                    if isClient == true{
+//                        ClientMenu()
+//                    } else{
+//                        Caregiver_Main_Menu()
+//                    }
+                    TabView_Page()
+                }
+            
+             
              
                 HStack{
                     Text("Already have an account?")

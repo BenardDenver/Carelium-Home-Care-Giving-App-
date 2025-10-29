@@ -11,18 +11,6 @@ struct Clients_List: View {
     @State var isDeleting : Bool = false
     var body: some View {
         NavigationStack {
-            VStack{
-                HStack{
-                    Text("My Clients")
-                        .font(.title)
-                        .bold()
-                    Spacer()
-                }
-                
-            }
-            .toolbar(.hidden, for: .tabBar)
-            .padding()
-            
             ScrollView {
                 ForEach(clients) { client in
                     HStack{
@@ -56,10 +44,13 @@ struct Clients_List: View {
                         
                         
                     }
+                    .toolbar(.hidden, for: .tabBar)
+                    .navigationTitle("Clients List")
                     .overlay{
                         Rectangle()
                             .stroke(lineWidth: 1)
                             .frame(height: 50)
+                            .foregroundStyle(.orange)
                     }
                     .padding(10)
                 }
