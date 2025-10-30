@@ -11,15 +11,6 @@ struct Find_Caregiver: View {
     @State var searchCaregiver:String = ""
     @State var isBooked: Bool = false
     var body: some View {
-//        HStack{
-        //            Text("Caregivers List")
-        //                .font(.title)
-        //                .bold()
-        //            Spacer()
-        //        }
-        //        .toolbar(.hidden, for: .tabBar)
-        //        .padding()
-        
         NavigationStack {
             ScrollView {
                 ForEach(filteredCaregivers){ caregiver in
@@ -58,12 +49,13 @@ struct Find_Caregiver: View {
                         .padding()
                     }
                     .padding()
+                    
                 }
-                
+                .searchable(text: $searchCaregiver, prompt: "Search for a caregiver")
             }
         }
-        .searchable(text: $searchCaregiver, prompt: "Search for a caregiver")
-        .toolbar(.hidden, for: .tabBar)
+       
+        //.toolbar(.hidden, for: .tabBar)
         
     }
     var filteredCaregivers:[Caregiver]{

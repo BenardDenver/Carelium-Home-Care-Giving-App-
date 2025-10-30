@@ -10,7 +10,7 @@ import SwiftUI
 struct CommunicationHub: View {
     var body: some View {
         VStack{
-          Text("Communcation hub")
+          Text("Communication Hub coming soon..")
         }
         
     }
