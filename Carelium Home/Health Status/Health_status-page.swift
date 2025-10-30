@@ -55,7 +55,7 @@ struct Health_Status:View {
             .padding()
             .toolbar(.hidden, for: .tabBar)
         }
-        .ignoresSafeArea()
+        
     }
 }
 #Preview {

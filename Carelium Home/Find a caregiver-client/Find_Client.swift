@@ -50,7 +50,7 @@ struct Find_Client: View {
                     }
                     .padding()
                 }
-                
+                .searchable(text: $searchClient, prompt: "Search for a client")
             }
         }
         .searchable(text: $searchClient, prompt: "Search for a client")

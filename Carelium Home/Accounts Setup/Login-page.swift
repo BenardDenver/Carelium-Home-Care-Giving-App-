@@ -175,7 +175,7 @@ struct Login: View {
                  
             }
             .padding()
-            .navigationTitle("Welcome Back!")
+            .navigationTitle("Login")
             
             
         }
